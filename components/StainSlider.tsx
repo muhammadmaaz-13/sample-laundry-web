@@ -53,8 +53,8 @@ export function StainSlider() {
         }}
       >
         <Image
-          src={siteConfig.images.folded}
-          alt="Clean laundry after"
+          src={siteConfig.images.handshake}
+          alt="Ready professional signing"
           fill
           className="object-cover"
           sizes="(max-width: 1120px) 100vw, 1120px"
@@ -64,8 +64,8 @@ export function StainSlider() {
           style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}
         >
           <Image
-            src={siteConfig.images.machines}
-            alt="Laundry before"
+            src={siteConfig.images.signing}
+            alt="Unprepared paperwork"
             fill
             className="object-cover brightness-75 saturate-50 contrast-125"
             sizes="(max-width: 1120px) 100vw, 1120px"

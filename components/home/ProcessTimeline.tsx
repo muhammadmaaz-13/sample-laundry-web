@@ -2,15 +2,15 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Calendar, CheckCircle2, Shirt, Truck } from "lucide-react";
+import { Calendar, CheckCircle2, PenLine, PhoneCall } from "lucide-react";
 import { GuideCallout } from "@/components/demo/GuideCallout";
 import { useT } from "@/lib/i18n";
 
 const steps = [
-  { icon: Calendar, title: "step1Title", desc: "step1Desc" },
-  { icon: Shirt, title: "step2Title", desc: "step2Desc" },
-  { icon: CheckCircle2, title: "step3Title", desc: "step3Desc" },
-  { icon: Truck, title: "step4Title", desc: "step4Desc" },
+  { icon: PhoneCall, title: "step1Title", desc: "step1Desc" },
+  { icon: Calendar, title: "step2Title", desc: "step2Desc" },
+  { icon: PenLine, title: "step3Title", desc: "step3Desc" },
+  { icon: CheckCircle2, title: "step4Title", desc: "step4Desc" },
 ] as const;
 
 export function ProcessTimeline() {

@@ -12,11 +12,14 @@ import { trackNameTypedDebounced } from "@/lib/track";
 import { cn } from "@/lib/cn";
 import { Button } from "@/components/ui/Button";
 
-const leads: { id: LeadService; labelKey: "catWashFold" | "catDryClean" | "catIroning" | "catCommercial" }[] = [
-  { id: "washFold", labelKey: "catWashFold" },
-  { id: "dryClean", labelKey: "catDryClean" },
-  { id: "ironing", labelKey: "catIroning" },
-  { id: "commercial", labelKey: "catCommercial" },
+const leads: {
+  id: LeadService;
+  labelKey: "catWashFold" | "catDryClean" | "catIroning" | "catCommercial";
+}[] = [
+  { id: "loan", labelKey: "catWashFold" },
+  { id: "apostille", labelKey: "catDryClean" },
+  { id: "estate", labelKey: "catIroning" },
+  { id: "business", labelKey: "catCommercial" },
 ];
 
 const ctas: { id: MainCta; labelKey: "navBook" | "navCall" | "navQuote" }[] = [

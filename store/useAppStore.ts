@@ -47,12 +47,12 @@ export const useAppStore = create<AppState>()(
         set({ bookingOpen: true, bookingPrefill: prefill ?? null }),
       closeBooking: () => set({ bookingOpen: false }),
       openTracker: (code) =>
-        set({ trackerOpen: true, trackerCode: code ?? "CLEAN123" }),
+        set({ trackerOpen: true, trackerCode: code ?? "SIGN123" }),
       setQuickContactOpen: (open) => set({ quickContactOpen: open }),
       dismissInstallBanner: () => set({ installBannerDismissed: true }),
     }),
     {
-      name: "laundry-app",
+      name: "notary-app",
       partialize: (s) => ({
         mode: s.mode,
         installBannerDismissed: s.installBannerDismissed,

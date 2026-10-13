@@ -1,4 +1,4 @@
-const CACHE = "laundry-shell-v1";
+const CACHE = "notary-shell-v1";
 const ASSETS = ["/", "/services", "/about", "/booking", "/contact"];
 
 self.addEventListener("install", (event) => {

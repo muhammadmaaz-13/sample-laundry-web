@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Sparkles, Star } from "lucide-react";
+import { ShieldCheck, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { GuideCallout } from "@/components/demo/GuideCallout";
 import { useT } from "@/lib/i18n";
@@ -13,11 +13,11 @@ import { track } from "@/lib/track";
 import type { DictKey } from "@/config/translations";
 
 const headlineKey: Record<string, DictKey> = {
-  washFold: "heroHeadlineWashFold",
-  dryClean: "heroHeadlineDryClean",
-  ironing: "heroHeadlineIroning",
-  eco: "heroHeadlineEco",
-  commercial: "heroHeadlineCommercial",
+  loan: "heroHeadlineLoan",
+  apostille: "heroHeadlineApostille",
+  estate: "heroHeadlineEstate",
+  mobile: "heroHeadlineMobile",
+  business: "heroHeadlineBusiness",
 };
 
 export function Hero() {
@@ -84,13 +84,13 @@ export function Hero() {
         <div className="relative min-h-[70vh] w-full">
           <Image
             src={cfg.images.hero}
-            alt="Fresh clean laundry"
+            alt="Professional document signing"
             fill
             priority
             className="object-cover"
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/45 to-black/20" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/50 to-black/25" />
           <div className="relative z-10 flex min-h-[70vh] flex-col justify-center px-5 py-16 md:px-12 md:py-24">
             <motion.p
               initial={{ opacity: 0, y: 12 }}
@@ -105,19 +105,23 @@ export function Hero() {
               transition={{ delay: 0.05 }}
               className="font-heading max-w-2xl text-4xl font-bold leading-tight text-white md:text-5xl"
             >
-              {t(headlineKey[cfg.lead] ?? "heroHeadlineWashFold")}
+              {t(headlineKey[cfg.lead] ?? "heroHeadlineLoan")}
             </motion.h1>
             <p className="mt-4 max-w-xl text-base text-white/85 md:text-lg">
               {t("heroSub")}
             </p>
-            <p className="mt-3 h-7 font-mono text-sm text-[var(--primary)] md:text-base">
+            <p className="mt-3 h-7 font-mono text-sm text-white md:text-base">
               <span className="text-white/70">· </span>
               {text}
               <span className="animate-pulse">|</span>
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button onClick={onPrimary}>{primaryLabel}</Button>
-              <Button variant="outline" onClick={onAlt} className="border-white/50 text-white">
+              <Button
+                variant="outline"
+                onClick={onAlt}
+                className="border-white/50 text-white"
+              >
                 {altLabel}
               </Button>
             </div>
@@ -138,7 +142,7 @@ export function Hero() {
                 transition={{ delay: 0.4 }}
                 className="glass flex items-center gap-2 rounded-2xl px-4 py-3 text-sm font-semibold text-white"
               >
-                <Star className="h-4 w-4 fill-amber-300 text-amber-300" />
+                <ShieldCheck className="h-4 w-4 text-emerald-300" />
                 {t("heroWidgetRating")}
               </motion.div>
             </div>

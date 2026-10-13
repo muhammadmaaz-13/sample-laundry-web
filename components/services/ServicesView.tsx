@@ -13,19 +13,20 @@ import type { DictKey } from "@/config/translations";
 import { cn } from "@/lib/cn";
 
 const catLabel: Record<LeadService, DictKey> = {
-  washFold: "catWashFold",
-  dryClean: "catDryClean",
-  ironing: "catIroning",
-  eco: "catEco",
-  commercial: "catCommercial",
+  loan: "catWashFold",
+  apostille: "catDryClean",
+  estate: "catIroning",
+  mobile: "catEco",
+  business: "catCommercial",
 };
 
 const unitLabel: Record<string, DictKey> = {
-  kg: "perKg",
-  piece: "perPiece",
-  suit: "perSuit",
-  bag: "perBag",
-  set: "perSet",
+  seal: "perKg",
+  document: "perPiece",
+  signing: "perSuit",
+  package: "perBag",
+  appointment: "perSet",
+  visit: "perSet",
 };
 
 export function ServicesView() {
@@ -128,9 +129,7 @@ export function ServicesView() {
         })}
       </div>
 
-      {(cat === "commercial" || query === "") && cat === "commercial" && (
-        <CommercialCalculator />
-      )}
+      {cat === "business" && !query && <CommercialCalculator />}
     </div>
   );
 }

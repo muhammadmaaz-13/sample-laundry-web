@@ -1,12 +1,12 @@
 "use client";
 
-import { Leaf, ShieldCheck, Timer, MessageSquare } from "lucide-react";
+import { BadgeCheck, ShieldCheck, Timer, MessageSquare } from "lucide-react";
 import { motion } from "framer-motion";
 import { GuideCallout } from "@/components/demo/GuideCallout";
 import { useT } from "@/lib/i18n";
 
 const items = [
-  { icon: Leaf, title: "whyEco", desc: "whyEcoDesc" },
+  { icon: BadgeCheck, title: "whyEco", desc: "whyEcoDesc" },
   { icon: ShieldCheck, title: "whyGuarantee", desc: "whyGuaranteeDesc" },
   { icon: Timer, title: "whyExpress", desc: "whyExpressDesc" },
   { icon: MessageSquare, title: "whySms", desc: "whySmsDesc" },

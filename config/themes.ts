@@ -7,30 +7,31 @@ export interface ThemeDefinition {
   description: string;
 }
 
+/** CSS ids stay stable; display names match notary brand themes. */
 export const themes: ThemeDefinition[] = [
   {
     id: "aqua",
-    name: "Aqua iOS",
-    nameEs: "Aqua iOS",
-    description: "Crisp cyan glass with floating bubbles",
+    name: "Corporate",
+    nameEs: "Corporativo",
+    description: "Crisp navy glass for trusted professionals",
   },
   {
     id: "mint",
-    name: "Fresh Mint",
-    nameEs: "Menta Fresca",
-    description: "Eco emerald with soft organic shapes",
+    name: "Friendly",
+    nameEs: "Amigable",
+    description: "Warm teal with approachable soft shapes",
   },
   {
     id: "midnight",
-    name: "Midnight Premium",
-    nameEs: "Medianoche Premium",
+    name: "Executive",
+    nameEs: "Ejecutivo",
     description: "Champagne gold on cinematic dark",
   },
   {
     id: "warm",
-    name: "Warm Friendly",
-    nameEs: "Cálido Amigable",
-    description: "Coral peach with pill-soft curves",
+    name: "Fresh",
+    nameEs: "Fresco",
+    description: "Sage green with open, modern curves",
   },
 ];
 

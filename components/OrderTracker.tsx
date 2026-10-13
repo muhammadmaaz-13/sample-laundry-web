@@ -2,19 +2,14 @@
 
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import {
-  Package,
-  Shirt,
-  Sparkles,
-  Truck,
-} from "lucide-react";
+import { CalendarCheck, CheckCircle2, ClipboardList, PenLine } from "lucide-react";
 import { siteConfig } from "@/config/siteConfig";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { Button } from "@/components/ui/Button";
 import { useT } from "@/lib/i18n";
 import { cn } from "@/lib/cn";
 
-const icons = [Package, Shirt, Sparkles, Truck];
+const icons = [ClipboardList, CalendarCheck, PenLine, CheckCircle2];
 const stepKeys = [
   "trackerStepPickedUp",
   "trackerStepWashing",
@@ -22,11 +17,7 @@ const stepKeys = [
   "trackerStepDelivery",
 ] as const;
 
-export function OrderTracker({
-  forcedCode,
-}: {
-  forcedCode?: string;
-}) {
+export function OrderTracker({ forcedCode }: { forcedCode?: string }) {
   const { t } = useT();
   const [code, setCode] = useState("");
   const [active, setActive] = useState(false);
@@ -81,7 +72,7 @@ export function OrderTracker({
           className="focus-ring min-h-11 flex-1 rounded-btn border border-[var(--glass-border)] bg-[var(--surface)] px-4 text-sm outline-none focus:border-[var(--primary)]"
         />
         <Button onClick={() => start()}>{t("trackerDemo").split(" ")[0]}</Button>
-        <Button variant="outline" onClick={() => start("CLEAN123")}>
+        <Button variant="outline" onClick={() => start("SIGN123")}>
           {t("trackerDemo")}
         </Button>
       </motion.div>
@@ -121,7 +112,10 @@ export function OrderTracker({
                   const Icon = icons[i];
                   const on = i <= step;
                   return (
-                    <div key={key} className="flex flex-col items-center gap-2 text-center">
+                    <div
+                      key={key}
+                      className="flex flex-col items-center gap-2 text-center"
+                    >
                       <div
                         className={cn(
                           "flex h-10 w-10 items-center justify-center rounded-full border-2 transition-colors",

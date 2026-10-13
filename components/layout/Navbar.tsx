@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, Shirt, X } from "lucide-react";
+import { Menu, Stamp, X } from "lucide-react";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
@@ -59,7 +59,7 @@ export function Navbar() {
           className="focus-ring flex min-h-11 items-center gap-2 rounded-full px-2"
         >
           <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[var(--primary)] text-white">
-            <Shirt className="h-4 w-4" />
+            <Stamp className="h-4 w-4" />
           </span>
           <span className="hidden max-w-[140px] truncate text-sm font-bold text-[var(--secondary)] sm:block">
             {cfg.logoText}

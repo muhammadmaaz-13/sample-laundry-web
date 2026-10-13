@@ -1,14 +1,14 @@
-# Sample Laundry Web
+# Sample Notary Web
 
-iOS-inspired multi-page laundry / dry-cleaning template with EN/ES, light/dark, four visual themes, interactive modules, and a demo customization layer.
+iOS-inspired multi-page notary template with EN/ES, light/dark, four visual themes (Corporate, Friendly, Executive, Fresh), interactive modules, and a demo customization layer.
 
 ## White-label in 60 seconds
 
 Edit **one file**: [`config/siteConfig.ts`](config/siteConfig.ts)
 
 - Business name, tagline, logo text, city, phone, email, address, hours, socials
-- Pricing, services, branches, images, estimator rates, commercial discounts
-- Tracker demo code (`CLEAN123`), care guide data
+- Pricing, services, coverage locations, images, estimator rates, volume discounts
+- Tracker demo code (`SIGN123`), document prep guide
 
 Translations: [`config/translations/en.ts`](config/translations/en.ts) and [`config/translations/es.ts`](config/translations/es.ts)
 
@@ -18,7 +18,7 @@ Themes: [`config/themes.ts`](config/themes.ts)
 
 A fixed toolbar lets prospects:
 
-- Cycle 4 themes (Aqua iOS · Fresh Mint · Midnight Premium · Warm Friendly)
+- Cycle 4 themes (Corporate · Friendly · Executive · Fresh)
 - Customize name, city, tagline, lead service, main CTA, accent
 - Toggle “Why it works” callouts and EN/ES
 
@@ -41,4 +41,4 @@ npm start
 
 Vercel project name: `sample-laundry-web`
 
-Forms/booking/analytics are simulated client-side. Swap `lib/track.ts` and form handlers when you wire real endpoints.
+Forms and booking are simulated client-side. Swap `lib/track.ts` and form handlers when you wire real endpoints.

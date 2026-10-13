@@ -82,7 +82,7 @@ export const useDemoStore = create<DemoState>()(
       markThemePressed: () => set({ firstThemePress: true }),
     }),
     {
-      name: "laundry-demo",
+      name: "notary-demo",
       partialize: (s) => ({
         themeIndex: s.themeIndex,
         lang: s.lang,

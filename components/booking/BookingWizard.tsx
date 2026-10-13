@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { BedDouble, Check, Shirt, Sparkles, Wind } from "lucide-react";
+import { Building2, Check, FileSignature, Stamp, Truck } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { FloatingInput } from "@/components/ui/FloatingInput";
 import { GuideCallout } from "@/components/demo/GuideCallout";
@@ -13,10 +13,10 @@ import { track } from "@/lib/track";
 import { cn } from "@/lib/cn";
 
 const svcOptions = [
-  { id: "wash", icon: Shirt, label: "bookingSvcWash" as const },
-  { id: "dry", icon: Sparkles, label: "bookingSvcDry" as const },
-  { id: "iron", icon: Wind, label: "bookingSvcIron" as const },
-  { id: "bedding", icon: BedDouble, label: "bookingSvcBedding" as const },
+  { id: "loan", icon: FileSignature, label: "bookingSvcWash" as const },
+  { id: "apostille", icon: Stamp, label: "bookingSvcDry" as const },
+  { id: "estate", icon: Building2, label: "bookingSvcIron" as const },
+  { id: "mobile", icon: Truck, label: "bookingSvcBedding" as const },
 ];
 
 const slots = ["bookingMorning", "bookingAfternoon", "bookingEvening"] as const;
@@ -31,7 +31,7 @@ export function BookingWizard({ prefill, onTrack }: Props) {
   const cfg = useSiteConfig();
   const [step, setStep] = useState(0);
   const [services, setServices] = useState<string[]>(
-    prefill?.services ?? (cfg.lead === "dryClean" ? ["dry"] : ["wash"])
+    prefill?.services ?? [cfg.lead === "apostille" ? "apostille" : "loan"]
   );
   const [date, setDate] = useState("");
   const [slot, setSlot] = useState<string>("bookingMorning");
@@ -59,7 +59,7 @@ export function BookingWizard({ prefill, onTrack }: Props) {
         return;
       }
       setPhoneError("");
-      const id = `LD-${Math.random().toString(36).slice(2, 8).toUpperCase()}`;
+      const id = `NT-${Math.random().toString(36).slice(2, 8).toUpperCase()}`;
       setTrackingId(id);
       track("book_clicked", { services: services.join(",") });
     }
@@ -192,8 +192,8 @@ export function BookingWizard({ prefill, onTrack }: Props) {
               <Button
                 className="mt-6"
                 onClick={() => {
-                  onTrack?.("CLEAN123");
-                  openTracker("CLEAN123");
+                  onTrack?.("SIGN123");
+                  openTracker("SIGN123");
                 }}
               >
                 {t("bookingTrackIt")}

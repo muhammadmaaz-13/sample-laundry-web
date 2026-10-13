@@ -21,8 +21,8 @@ export function AboutView() {
       <div className="mx-auto grid w-[min(1120px,calc(100%-2rem))] items-center gap-8 md:grid-cols-2">
         <div className="relative aspect-[4/3] overflow-hidden rounded-card">
           <Image
-            src={siteConfig.images.machines}
-            alt="European washing machines"
+            src={siteConfig.images.office}
+            alt="Professional notary office"
             fill
             className="object-cover"
             sizes="(max-width: 768px) 100vw, 560px"

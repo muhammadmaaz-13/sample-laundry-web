@@ -17,22 +17,21 @@ export function CommercialCalculator() {
   const { t } = useT();
   const cfg = useSiteConfig();
   const [biz, setBiz] = useState<Biz>("airbnb");
-  const [bags, setBags] = useState(8);
-  const [towels, setTowels] = useState(40);
-  const [sheets, setSheets] = useState(10);
+  const [signings, setSignings] = useState(8);
+  const [seals, setSeals] = useState(40);
+  const [travel, setTravel] = useState(6);
   const [requested, setRequested] = useState(false);
 
   const { monthly, discount } = useMemo(() => {
     const c = siteConfig.commercial;
     const weekly =
-      bags * c.perBagWeekly + towels * c.perTowel + sheets * c.perSheetSet;
+      signings * c.perSigningWeekly + seals * c.perSeal + travel * c.perTravel;
     let d = 0;
     for (const tier of c.volumeDiscounts) {
-      if (bags >= tier.minBags) d = tier.discount;
+      if (signings >= tier.minSignings) d = tier.discount;
     }
-    const after = weekly * (1 - d) * 4.3;
-    return { monthly: after, discount: d };
-  }, [bags, towels, sheets]);
+    return { monthly: weekly * (1 - d) * 4.3, discount: d };
+  }, [signings, seals, travel]);
 
   return (
     <GlassCard className="mt-6">
@@ -51,9 +50,25 @@ export function CommercialCalculator() {
         ]}
       />
       <div className="mt-6 space-y-4">
-        <Slider label={t("bagsPerWeek")} value={bags} onChange={setBags} max={60} />
-        <Slider label={t("towelsPerWeek")} value={towels} onChange={setTowels} max={200} step={5} />
-        <Slider label={t("sheetsPerWeek")} value={sheets} onChange={setSheets} max={80} />
+        <Slider
+          label={t("bagsPerWeek")}
+          value={signings}
+          onChange={setSignings}
+          max={40}
+        />
+        <Slider
+          label={t("towelsPerWeek")}
+          value={seals}
+          onChange={setSeals}
+          max={200}
+          step={5}
+        />
+        <Slider
+          label={t("sheetsPerWeek")}
+          value={travel}
+          onChange={setTravel}
+          max={40}
+        />
       </div>
       <div className="mt-6 flex flex-wrap items-end justify-between gap-4">
         <div>
@@ -77,17 +92,12 @@ export function CommercialCalculator() {
           <Button
             onClick={() => {
               setRequested(true);
-              track("quote_submitted", { biz, bags, towels, sheets });
+              track("quote_submitted", { biz, signings, seals, travel });
             }}
           >
             {t("requestQuote")}
           </Button>
-          <Button
-            variant="outline"
-            onClick={() => {
-              window.print();
-            }}
-          >
+          <Button variant="outline" onClick={() => window.print()}>
             {t("downloadQuote")}
           </Button>
         </div>
@@ -97,16 +107,6 @@ export function CommercialCalculator() {
           {t("formThanks")}
         </p>
       )}
-      <div className="hidden print:block">
-        <h1>{cfg.businessName} — Quote</h1>
-        <p>
-          {biz}: {bags} bags, {towels} towels, {sheets} sheets / week
-        </p>
-        <p>
-          Monthly: {cfg.currency}
-          {monthly.toFixed(2)}
-        </p>
-      </div>
     </GlassCard>
   );
 }

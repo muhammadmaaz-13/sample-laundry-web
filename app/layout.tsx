@@ -50,7 +50,7 @@ const nunito = Nunito({
 
 export const metadata: Metadata = {
   title: {
-    default: `${siteConfig.businessName} | Laundry & Dry Cleaning`,
+    default: `${siteConfig.businessName} | Notary Services`,
     template: `%s | ${siteConfig.businessName}`,
   },
   description: siteConfig.tagline,
@@ -79,8 +79,8 @@ export const viewport: Viewport = {
 const themeBoot = `
 (function(){
   try {
-    var app = JSON.parse(localStorage.getItem('laundry-app')||'{}');
-    var demo = JSON.parse(localStorage.getItem('laundry-demo')||'{}');
+    var app = JSON.parse(localStorage.getItem('notary-app')||'{}');
+    var demo = JSON.parse(localStorage.getItem('notary-demo')||'{}');
     var stateApp = app.state || app;
     var stateDemo = demo.state || demo;
     var mode = stateApp.mode || 'light';
